@@ -1,0 +1,27 @@
+package operation;
+
+public class OperationBuilder {
+	
+	public Operation getOperation(String operation)
+	{
+		Operation opr;
+		System.out.println("Operation---"+ operation.trim());
+		switch(operation.trim())
+		{
+		case "GAF":
+			opr= new GetAllFilesOperation();
+			return opr;
+		case "AF":
+			opr = new AddFileOperation();
+		case "DF":
+			opr = new DeleteFileOperation();
+		case "SF":
+			opr = new SearchFileOperation();
+		default:
+			opr= new GetAllFilesOperation();
+		}
+		
+		return opr;
+	}
+
+}

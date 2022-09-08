@@ -1,0 +1,23 @@
+package appStart;
+import menu.*;
+import java.util.*;
+
+public class AppStart {
+	
+	
+	public static void main(String args[])
+	{
+		// set variables
+		int selectedOption=0;
+		// display Welcome screen. 		
+		Menu welcomeScreenMenu =  MenuBuilder.getMenu(selectedOption);		
+		welcomeScreenMenu.displayMenu();
+		
+		//Read chosen option
+		Scanner sc = new Scanner(System.in);
+		selectedOption = sc.nextInt();
+		sc.close();			
+		
+	}
+
+}

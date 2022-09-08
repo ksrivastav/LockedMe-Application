@@ -1,0 +1,34 @@
+package menu;
+
+public class WelcomeScreemMenu extends Menu {
+    
+	public  WelcomeScreemMenu()
+	{
+		this.IsSelected=true;
+		this.populateOperationList();
+		
+	}
+	protected void populateOperationList()
+	{
+		this.operationList = null;
+		
+	}
+	
+	protected void displayMenu()
+	{
+		String appName = "LockedMe";
+		String developerName ="Kartikaya Srivatav";
+		String companyDetails = 
+				String.format("*****************************************************\n"
+				+ "** Welcome to %s.com. \n" + "** This application was developed by %s.\n"
+				+ "*****************************************************\n", 
+				appName, developerName);
+				String appFunction = "You can use this application to :-\n"
+				+ "• Retrieve all file names in the \"main\" folder\n"
+				+ "• Search, add, or delete files in \"main\" folder.\n"
+				+ "\n**Please be careful to ensure the correct filename is provided for searching or deleting files.**\n";
+				System.out.println(companyDetails);
+				System.out.println(appFunction);
+	
+	}
+}

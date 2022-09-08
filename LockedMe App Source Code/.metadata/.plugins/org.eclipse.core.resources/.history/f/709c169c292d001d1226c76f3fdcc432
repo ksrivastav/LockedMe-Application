@@ -1,0 +1,17 @@
+package appStart;
+import menu.*;
+
+public class AppStart {
+	
+	
+	public static void main(String args[])
+	{
+		// display Welcome screen. 
+		
+		Menu welcomeScreenMenu =  MenuBuilder.getMenu(0);
+		
+		welcomeScreenMenu.displayMenu();
+		
+	}
+
+}

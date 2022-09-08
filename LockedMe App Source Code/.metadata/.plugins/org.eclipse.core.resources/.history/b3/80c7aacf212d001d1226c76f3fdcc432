@@ -1,0 +1,22 @@
+<config>
+  WelcomeScreenMessage = "Welcome to"
+<ApplicationName>LockedMe Application </ApplicationName> 
+<DeveloperName>Kartikaya Srivastav</DeveloperName> 
+<DeveloperContact>kart.mcr@gmail.com</DeveloperContact> 
+
+<WelcomeScreenOperationList>
+<operation> </operation>
+</WelcomeScreenOperationList> 
+
+<MainMenuOption1ScreenOperationList>
+<operation>Display Files</operation>
+</MainMenuOption1ScreenOperationList> 
+
+<MainMenuOption2ScreenOperationList>
+<operation>Add New File</operation>
+<operation>Delete File</operation>
+<operation>Search File</operation>
+</MainMenuOption2ScreenOperationList> 
+
+</config>
+

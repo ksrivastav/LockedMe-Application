@@ -1,0 +1,32 @@
+package menu;
+import java.util.Scanner;
+public class AppHandler {
+	
+	public static String CURRENTMENU;
+	public static boolean RUNNING;
+	public static Scanner sc = new Scanner(System.in);
+	
+	
+	public static void setCurrentMenu(String m)
+	{
+		CURRENTMENU = m;
+		
+	}
+	
+	public static void setAppRunning()
+	{
+		RUNNING = true;
+		
+	}
+	
+	public static void closeApp()
+	{
+		RUNNING = false;
+		CURRENTMENU= null;
+		sc.close();
+		System.exit(0);
+	}
+	
+	
+
+}

@@ -1,0 +1,27 @@
+package operation;
+
+public class OperationBuilder {
+	
+	public Operation getOperation(String operation)
+	{
+		Operation opr;
+		
+		switch(operation)
+		{
+		case "View all file list":
+			opr= new GetAllFilesOperation();
+			return opr;
+		case "Add file":
+			opr = new AddFileOperation();
+		case "Delete File":
+			opr = new DeleteFileOperation();
+		case "Search File":
+			opr = new SearchFileOperation();
+		default:
+			opr= new GetAllFilesOperation();
+		}
+		
+		return opr;
+	}
+
+}

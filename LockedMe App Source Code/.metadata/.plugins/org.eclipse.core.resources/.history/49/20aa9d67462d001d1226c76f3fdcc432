@@ -1,0 +1,35 @@
+package menu;
+import operation.*;
+public class MenuOption1 extends Menu {
+    
+	public  MenuOption1()
+	{
+		this.IsSelected=true;
+		this.populateOperationList();
+		
+		
+	}
+	protected void populateOperationList()
+	{
+		this.operationList.put("GAF", "View all file list");
+			
+	}
+	
+	public void displayMenu()
+	{
+		
+		System.out.println("Please chose from below options:");
+		this.operationList.forEach((key, value)->
+		 {
+		    System.out.println(value + "-> " + key );
+		 });
+				
+				
+	}
+	
+	public void inputHandler(String option)
+	{
+		OperationBuilder ob = new OperationBuilder();
+		ob.getOperation(this.operationList.get(Integer.parseInt(option)));
+	}
+}

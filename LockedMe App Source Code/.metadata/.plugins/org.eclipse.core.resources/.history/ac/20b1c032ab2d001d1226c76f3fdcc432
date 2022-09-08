@@ -1,0 +1,9 @@
+package operation;
+
+public class DeleteFileOperation implements Operation {
+
+	public void execute(String filename)
+	{
+		System.out.println("DeleteFileOperation");
+	}
+}

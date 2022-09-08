@@ -1,0 +1,30 @@
+package helper;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import java.io.File;
+
+public class ConfigReader {
+	
+	public String  getConfig()
+	{
+		String config="";
+		
+		
+		File file = new File("/LockedMe/src/resources/config.xml");
+		DocumentBuilderFactory dbf = DocumentBuilderFactory.newDefaultInstance(); 
+		
+		//Document document =  dbf.newDocumentBuilder().parse(file);
+		
+		
+	
+		
+		return config;
+		
+	}
+
+}

@@ -1,0 +1,60 @@
+package menu;
+
+import operation.Operation;
+import operation.OperationBuilder;
+
+public class MenuOption2 extends Menu {
+	Operation opt;
+	String currentCMD;
+	public  MenuOption2()
+	{
+		this.IsSelected=true;
+		this.populateOperationList();
+		
+		
+	}
+	protected void populateOperationList()
+	{
+		this.operationList.put("AF", "Add File");
+		this.operationList.put("DF", "Delete File");
+		this.operationList.put("SF", "Search File");
+			
+	}
+	
+	public void displayMenu()
+	{
+		
+				System.out.println("Please chose from below options:");
+				this.operationList.forEach((key, value)->
+				{
+					System.out.println(value + "-> " + key );
+				});
+				
+				
+	}
+	
+	public void inputHandler(String option)
+	{   
+		if(option.toUpperCase().equals("BACK"))
+		{
+		AppHandler.changeMenu(0);
+		}
+	    if(option.contains("Y"))
+	    {
+		   OperationBuilder ob = new OperationBuilder();		
+			opt=ob.getOperation(this.operationList.get(this.currentCMD));
+	    }
+		if(option.contains("CMD"))
+		{
+			this.currentCMD= option;
+			OperationBuilder ob = new OperationBuilder();		
+			opt=ob.getOperation(this.operationList.get(option));
+		}
+	   if(option.contains("file"))
+		{
+		    opt.execute(option);	
+		}
+	}
+	
+	
+}

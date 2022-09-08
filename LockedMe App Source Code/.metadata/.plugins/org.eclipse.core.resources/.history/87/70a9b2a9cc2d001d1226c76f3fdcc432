@@ -1,0 +1,20 @@
+package operation;
+
+import java.io.File;
+
+import helper.FileHandler;
+
+public class GetAllFilesOperation implements Operation {
+
+	public void execute(String filename)
+	{
+		System.out.println("***GAF Operation****");
+		FileHandler fh = new FileHandler(filename);
+		File[] fileList = fh.getAllFileList();
+		
+		for(int i=0;i< fileList.length;i++)
+		{
+			System.out.println(fileList[i].getName());
+		}
+	}
+}

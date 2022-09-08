@@ -1,0 +1,12 @@
+package operation;
+import helper.FileHandler;
+public class DefaultInvalidOperation implements Operation {
+
+	public void execute(String filename)
+	{
+		System.out.println("DeleteFileOperation"+ " "+ filename);
+		FileHandler fh = new FileHandler(filename);
+		boolean createSuccess = fh.deleteFile();
+		System.out.println(createSuccess);
+	}
+}

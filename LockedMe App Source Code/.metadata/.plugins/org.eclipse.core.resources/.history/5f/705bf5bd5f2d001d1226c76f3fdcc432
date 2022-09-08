@@ -1,0 +1,13 @@
+package operation;
+import helper.FileHandler;
+import java.io.File;
+public class AddFileOperation implements Operation {
+
+	public void execute(String filename)
+	{
+		System.out.println("AddFileOperation");
+		
+		
+		
+	}
+}

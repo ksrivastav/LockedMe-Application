@@ -1,0 +1,49 @@
+package menu;
+
+public class MenuBuilder {
+	
+	public static String CurrentMenu;
+	public static boolean RUNNING;
+	public static  Menu getMenu(int menuOption)
+	{
+		Menu menu;
+		switch(menuOption)
+		{
+		case 0:
+			menu = new WelcomeScreenMenu();
+			return menu;
+			
+			
+		}
+		return new WelcomeScreenMenu();
+		
+	}
+	
+	public static void setCurrentMenu(String m)
+	{
+		CurrentMenu = m;
+		
+	}
+	
+	public static void setAppRunning()
+	{
+		RUNNING = m;
+		
+	}
+	
+	public static void closeApp()
+	{
+		running = false;
+		CurrentMenu= null;
+		System.exit(0);
+	}
+	
+	public static void inputHandler()
+	{  
+		while(running == true)
+		{
+			
+		}
+	}
+
+}

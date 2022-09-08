@@ -1,0 +1,17 @@
+package helper;
+import java.io.File;
+public class EmptyFileList {
+	
+	File[] emptyFileList;
+	
+	public File[] getEmptyFileList()
+	{ 
+		String path ="";
+		path = path.concat("FileNotFound.tmp");
+		ClassLoader classLoader = getClass().getClassLoader();
+		emptyFileList [0] = new File(classLoader.getResource(path).getFile());
+		return emptyFileList;
+		
+	}
+
+}

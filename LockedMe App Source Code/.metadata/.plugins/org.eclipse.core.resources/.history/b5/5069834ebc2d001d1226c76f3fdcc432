@@ -1,0 +1,17 @@
+package helper;
+import java.io.File;
+import java.net.URL;
+public class EmptyFileList {
+	
+	File[] emptyFileList;
+	
+	public File[] getEmptyFileList()
+	{ 
+		
+		
+			
+		emptyFileList [0] = new File("./src/resources/FileNotFound.txt");
+		return emptyFileList;
+		
+	}
+}

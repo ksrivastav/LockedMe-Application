@@ -1,0 +1,30 @@
+package helper;
+import java.io.File;
+public class EmptyFileList {
+	
+	File[] emptyFileList;
+	
+	public File[] getEmptyFileList()
+	{ 
+		
+		
+		String tempFilePath ="./src/resources/FileNotFound.txt";
+
+		try {
+		File f = new File(tempFilePath);
+		System.out.println(f.getName());
+		emptyFileList[0]= f;
+		System.out.println(emptyFileList[0]);
+		return emptyFileList;
+		}
+		catch(Exception e)
+		{
+			System.out.println( e.getMessage());
+		}
+		
+			emptyFileList=null;
+			return emptyFileList;
+		
+		
+	}
+}

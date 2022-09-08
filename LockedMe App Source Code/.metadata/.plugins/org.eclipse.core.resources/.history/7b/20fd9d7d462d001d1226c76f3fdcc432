@@ -1,0 +1,48 @@
+package menu;
+
+public class MenuOption2 extends Menu {
+    
+	public  MenuOption2()
+	{
+		this.IsSelected=true;
+		this.populateOperationList();
+		
+		
+	}
+	protected void populateOperationList()
+	{
+		this.operationList.put("AF", "Add File");
+		this.operationList.put("DF", "Delete File");
+		this.operationList.put("SF", "Search File");
+			
+	}
+	
+	public void displayMenu()
+	{
+		
+				System.out.println("Please chose from below options:");
+				this.operationList.forEach((key, value)->
+				{
+					System.out.println(key + "-> " + value );
+				});
+				
+				
+	}
+	
+	public void inputHandler(String option)
+	{
+		if(option.toUpperCase().equals("BACK"))
+		{
+			AppHandler.changeMenu(0);
+		}
+		else
+		{
+			switch(Integer.parseInt(option))
+			{
+				case 1: System.out.println("your menuOption1");	
+					
+				case 2: System.out.println("your menu2");			
+			}
+		}
+	}
+}

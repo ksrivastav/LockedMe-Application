@@ -1,0 +1,10 @@
+package menu;
+
+import java.util.HashMap;
+public abstract class Menu {
+
+	HashMap<Integer, String> operationList = new HashMap<Integer, String>();
+	
+
+	
+}

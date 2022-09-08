@@ -1,0 +1,17 @@
+package helper;
+import java.io.File;
+import java.net.URL;
+public class EmptyFileList {
+	
+	File[] emptyFileList;
+	
+	public File[] getEmptyFileList()
+	{ 
+		
+		
+		//URL url = getClass().getResource("./LockedMe/src/resources/FileNotFound.txt");		
+		emptyFileList [0] = new File("/config.properties");
+		return emptyFileList;
+		
+	}
+}

@@ -1,0 +1,16 @@
+package helper;
+import java.io.File;
+public class EmptyFileList {
+	
+	File[] emptyFileList;
+	
+	public File[] getEmptyFileList()
+	{ 
+		File f = new File("/LockedMe/src/resources/FileNotFound.tmp");
+		emptyFileList = f.listFiles();
+		
+		return emptyFileList;
+		
+	}
+
+}

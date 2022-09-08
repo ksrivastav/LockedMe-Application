@@ -1,0 +1,20 @@
+package menu;
+
+public static class MenuBuilder {
+	
+	public Static  Menu getMenu(int menuOption)
+	{
+		Menu menu;
+		switch(menuOption)
+		{
+		case 0:
+			menu = new WelcomeScreenMenu();
+			return menu;
+			
+			
+		}
+		return new WelcomeScreenMenu();
+		
+	}
+
+}

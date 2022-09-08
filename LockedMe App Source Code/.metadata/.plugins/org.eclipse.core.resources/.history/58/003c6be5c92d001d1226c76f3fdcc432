@@ -1,0 +1,37 @@
+package helper;
+
+import menu.AppHandler;
+import operation.Operation;
+import operation.OperationBuilder;
+
+public class CommandParser {
+
+	public static Operation opt;
+		public static void inputHandler(String option, int prevMenu, String inUseCommand)
+		{   
+			if(option.toUpperCase().equals("BACK") || option.toUpperCase().equals("N"))
+			{
+			AppHandler.changeMenu(prevMenu);
+			}
+		    if(option.toUpperCase().equals("Y"))
+		    {
+		       System.out.println("op"+inUseCommand);
+			   OperationBuilder ob = new OperationBuilder();		
+			   opt=ob.getOperation(inUseCommand);
+			   System.out.println("enter command FILE <filename>");
+		    }
+			if(option.contains("CMD"))
+			{
+				
+				OperationBuilder ob = new OperationBuilder();
+				opt=ob.getOperation(option.substring(4).toUpperCase());
+				System.out.println("enter command FILE-<filename>");
+			}
+		   if(option.contains("FILE"))
+			{
+			   System.out.println("Perform Operation again?Y/N"); 
+			   opt.execute(option.substring(5));	
+			}
+		}
+	
+}

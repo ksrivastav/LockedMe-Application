@@ -1,0 +1,19 @@
+package helper;
+import java.io.File;
+public class EmptyFileList {
+	
+	File[] emptyFileList;
+	
+	public File[] getEmptyFileList()
+	{ 
+		
+		
+		String s="./src/resources/FileNotFound.txt";
+		String ss = "/LockedMe/src/helper/FileNotFound.txt";
+		String sss= "./src/resources/temp.txt";
+		File f = new File(s);
+		System.out.println(f.canRead());
+		return emptyFileList[0].listFiles();
+		
+	}
+}

@@ -1,0 +1,60 @@
+package menu;
+import java.util.Scanner;
+public class AppHandler {
+	
+	public static String CURRENTMENU;
+	public static boolean RUNNING;	
+	public static Scanner sc;
+	public static Menu currentMenu;
+	
+	
+	public static void setCurrentMenu(String m)
+	{
+		CURRENTMENU = m;
+		
+	}
+	
+	public static void setAppRunning()
+	{
+		RUNNING = true;
+		
+	}
+	
+	public static void closeApp()
+	{
+		RUNNING = false;
+		CURRENTMENU= null;
+		sc.close();
+		System.exit(0);
+	}
+	
+	public static void startApp()
+	{
+			
+		setAppRunning();				
+		currentMenu = MenuBuilder.getMenu(0);
+		currentMenu.displayMenu();	
+		setCurrentMenu("WelcomeScreen");		
+	}
+	
+	public static void inputHandler()
+	{
+		sc= new Scanner(System.in);
+		int option ;
+		option = sc.nextInt();
+		switch(CURRENTMENU)
+		{
+			case "WelcomeScreen":
+				currentMenu.inputHandler(option);
+		
+		}
+		
+		
+	}
+	
+	
+	
+	
+
+}
+	

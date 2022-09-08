@@ -1,0 +1,11 @@
+package operation;
+import helper.FileHandler;
+public class DeleteFileOperation implements Operation {
+
+	public void execute(String filename)
+	{
+		System.out.println("DeleteFileOperation");
+		FileHandler fh = new FileHandler(filename);
+		boolean createSuccess = fh.deleteFile();
+	}
+}

@@ -1,0 +1,39 @@
+package menu;
+
+public class MenuOption2 extends Menu {
+    
+	public  MenuOption2()
+	{
+		this.IsSelected=true;
+		this.populateOperationList();
+		
+		
+	}
+	protected void populateOperationList()
+	{
+		this.operationList.put(1, "View all file list");
+			
+	}
+	
+	public void displayMenu()
+	{
+		
+				System.out.println("Please chose from below options:");
+				this.operationList.forEach((key, value)->
+				{
+					System.out.println(key + "-> " + value );
+				});
+				
+				System.out.println("Enter you option(print EX to exit):");
+	}
+	
+	public void inputHandler(String option)
+	{
+		switch(Integer.parseInt(option))
+		{
+			case 1: System.out.println("your menuOption1");	
+				
+			case 2: System.out.println("your menu2");			
+		}
+	}
+}

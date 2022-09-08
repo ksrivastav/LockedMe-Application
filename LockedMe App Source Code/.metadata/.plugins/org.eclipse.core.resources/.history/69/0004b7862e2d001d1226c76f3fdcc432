@@ -1,0 +1,12 @@
+package menu;
+
+import java.util.HashMap;
+public abstract class Menu {
+
+	public HashMap<Integer, String> operationList = new HashMap<Integer, String>();
+	public boolean IsSelected;
+	protected abstract void populateOperationList();
+	public abstract void displayMenu();
+
+	
+}

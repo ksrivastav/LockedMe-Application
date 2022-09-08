@@ -1,0 +1,47 @@
+package operation;
+import java.util.Collections;
+
+import java.io.File;
+
+import helper.FileHandler;
+import java.util.ArrayList;
+import java.util.List;
+public class GetAllFilesOperation implements Operation {
+
+	public void execute(String filename)
+	{
+		System.out.println("***GAF Operation****");
+		String path = filename;
+		ArrayList<String> dirList = new ArrayList<String>();
+		
+		while(path.contains("\\")) {
+			
+			dirList.add(path);
+			path = path.substring(0 ,path.lastIndexOf("\\"));
+		}
+		
+		
+		dirList.forEach((file)->
+		{
+			FileHandler fh = new FileHandler(file);
+			System.out.println(file.toString());
+			fh.getAllFileList();
+					
+			
+		});
+		
+		
+	
+		
+	}
+	public void execute(String fpath, String fname)
+	{
+		System.out.println("***GAF Operation****");
+		FileHandler fh = new FileHandler(fpath , fname);
+		fh.getAllFileList();
+		
+		
+	
+	}
+	
+}

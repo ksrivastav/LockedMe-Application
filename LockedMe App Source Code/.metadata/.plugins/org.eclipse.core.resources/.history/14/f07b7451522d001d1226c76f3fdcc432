@@ -1,0 +1,62 @@
+package helper;
+import java.io.File;
+public class FileHandler {
+
+	public File fileHandler;
+	public FileHandler(String path)
+	{
+		fileHandler = new File(path);
+		
+	}
+	
+	public File[] getAllFileList()
+	{
+		File[] fileList;
+		fileList=fileHandler.listFiles();
+		return fileList;
+	}
+	
+	public boolean createNewFile()
+	{
+		try {
+		boolean creationFlag = fileHandler.createNewFile();
+		return creationFlag ;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			return false;
+		}
+		
+	}
+	
+	public boolean deleteFile()
+	{
+		try {
+		boolean delFlag = fileHandler.delete();
+		return delFlag ;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			return false;
+		}
+		
+	}
+	
+	public boolean searchFile()
+	{
+		try {
+		boolean delFlag = fileHandler.delete();
+		return delFlag ;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			return false;
+		}
+		
+	}
+	
+	
+}

@@ -1,0 +1,133 @@
+package helper;
+import java.io.File;
+import java.util.List;
+import java.util.Arrays;
+import java.util.Collections;
+
+import helper.EmptyFileList;
+public class FileHandler {
+
+	public File fileHandler;
+	public FileHandler(String path)
+	{
+		System.out.println(path);
+		fileHandler = new File(path);
+		
+	}
+	
+	public FileHandler(String path, String name)
+	{
+		System.out.println(path);
+		fileHandler = new File(path, name);
+		
+	}
+	
+	public void getAllFileList()
+	{
+		try 
+		{
+			File[] fileList;
+			fileList=fileHandler.listFiles();	
+			if(fileList.length <1)
+			{
+				throw new Exception("No File Found");
+			}
+			
+			List<File> list= Arrays.asList(fileList);
+			Collections.sort(list);		
+			list.forEach((file)->
+			{
+				
+				System.out.println("     ->"+file.getName());
+			}
+			
+					);
+		}
+		catch (Exception e)
+		{
+			System.out.println("     ->"+"Empty Directory");
+		}
+	}
+	
+	public boolean createNewFile()
+	{
+		try {
+		boolean creationFlag = fileHandler.createNewFile();
+		return creationFlag ;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			return false;
+		}
+		
+	}
+	
+	public boolean deleteFile()
+	{
+		try {
+		boolean delFlag = fileHandler.delete();
+		return delFlag ;
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			return false;
+		}
+		
+	}
+	
+	public File[] searchFile()
+	{
+		File[] fileList;
+		try {
+
+              fileList = fileHandler.listFiles();
+              return fileList;              
+		}
+		catch (Exception e)
+		{
+			EmptyFileList emp= new EmptyFileList();
+			
+			return emp.getEmptyFileList();
+		}
+		
+	}
+	
+	public static void getAllFileList(File f)
+	{
+		try 
+		{
+			File[] fileList;
+			fileList=f.listFiles();	
+			if(fileList.length <1)
+			{
+				throw new Exception("No File Found");
+			}
+			
+			List<File> list= Arrays.asList(fileList);
+			Collections.sort(list);		
+			list.forEach((file)->
+			{
+				if(file.isDirectory()==true)
+				{
+					File fsub = new File(file.getAbsolutePath().toString());
+					getAllFileList(fsub);
+				}
+				else
+				{
+					System.out.println("     ->"+file.getName());
+				}
+			}
+			
+					);
+		}
+		catch (Exception e)
+		{
+			System.out.println("     ->"+"Empty Directory");
+		}
+	}
+	
+	
+	
+}

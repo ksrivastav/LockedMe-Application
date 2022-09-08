@@ -1,0 +1,53 @@
+package helper;
+
+import menu.AppHandler;
+import operation.Operation;
+import operation.OperationBuilder;
+
+public class CommandParser {
+
+	public static Operation opt;
+		public static void inputHandler(String option, int prevMenu, String inUseCommand)
+		{   
+			if(option.toUpperCase().equals("BACK") || option.toUpperCase().equals("N"))
+			{
+			AppHandler.changeMenu(prevMenu);
+			}
+		    if(option.toUpperCase().equals("Y"))
+		    {
+		       System.out.println("op"+inUseCommand);
+			   OperationBuilder ob = new OperationBuilder();		
+			   opt=ob.getOperation(inUseCommand);
+			   System.out.println("enter command FILE <filename>");
+		    }
+			if(option.contains("CMD-"))
+			{
+				
+				OperationBuilder ob = new OperationBuilder();
+				opt=ob.getOperation(option.substring(4).toUpperCase());
+				System.out.println("enter command FILE-<filename>");
+			}
+		   if(option.toUpperCase().contains("FILE-"))
+			{
+			
+			   System.out.println("Perform Operation again?Y/N");
+			   System.out.println(option);
+			   if(option.toUpperCase().contains("FPATH-") && option.toUpperCase().contains("FNAME-") )
+			   {
+				   System.out.println("hai hai");
+					int pathpos = option.toUpperCase().indexOf("FPATH-");
+					int namepos = option.toUpperCase().indexOf("FNAME-");					
+					String fpath = option.substring(pathpos+6, namepos).trim();
+					String fname = option.substring(namepos+6).trim();
+					 opt.execute(fpath, fname);	
+			   } else
+			   {
+				   opt.execute(option.substring(5));
+			   }
+			    
+			   	
+			}
+		  
+		}
+	
+}

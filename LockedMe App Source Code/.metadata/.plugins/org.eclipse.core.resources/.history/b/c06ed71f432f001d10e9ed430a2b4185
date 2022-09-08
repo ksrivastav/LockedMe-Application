@@ -1,0 +1,17 @@
+package operation;
+
+import helper.FileHandler;
+
+public class SearchFileOperation implements Operation {
+
+	public void execute(String filename)
+	{
+		FileHandler fh = new FileHandler(filename);
+		
+		
+	}
+	public void execute(String fname, String fpath)
+	{
+		System.out.println("SearchFileOperation");
+	}
+}
